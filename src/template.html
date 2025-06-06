@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WeatherAppTest</title>
+    </head>
+    <body>
+        <h1>WeatherAppTest</h1>
+        <div class="weatherInfo">
+        <p>Welcome to the WeatherAppTest!</p>
+        <p>Current weather: {{ weather }}</p>
+        <p>Temperature: {{ temperature }}°C</p>
+        <p>Humidity: {{ humidity }}%</p>
+        <p>Wind Speed: {{ wind_speed }} km/h</p>
+        <p>Weather Description: {{ weather_description }}</p>
+        <p>Last Updated: {{ last_updated }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Coordinates: {{ coordinates }}</p>
+        <p>Forecast: {{ forecast }}</p>
+        <p>Forecast for the next 5 days:</p>
+        <ul>
+            {% for day in forecast %}
+                <li>{{ day.date }}: {{ day.weather }} with a temperature of {{ day.temperature }}°C</li>
+            {% endfor %}
+        </ul>
+        </div>
+        <div>
+        <p>Weather Icon: <img src="{{ weather_icon }}" alt="Weather Icon"></p>
+        <p>Weather Alert: {{ weather_alert }}</p>
+        <p>Weather Alerts: {{ weather_alerts }}</p>
+        <p>Weather Alerts List:</p>
+        <ul>
+            {% for alert in weather_alerts %}
+                <li>{{ alert.title }} - {{ alert.description }} (Expires: {{ alert.expires }})</li>
+            {% endfor %}
+        </ul>
+        </div> 
+    </body>
+</html>
